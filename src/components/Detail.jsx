@@ -31,14 +31,14 @@ export const Detail = () => {
     setLoader(false);
   };
 
-  const fetchCast = async () => {
-    const castdata = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${APIKEY}&language`
-    );
-    const castdetail = await castdata.json();
-    setCastdata(castdetail.cast);
-    setLoader(false);
-  }
+    const fetchCast = async () => {
+      const castdata = await fetch(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${APIKEY}&language`
+      );
+      const castdetail = await castdata.json();
+      setCastdata(castdetail.cast);
+      setLoader(false);
+    }
 
   const fetchVideo = async () => {
     const data = await fetch(
