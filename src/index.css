@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color:  #10141e;
+    background-color:  #000;
 }
 
 .shadow{
@@ -23,7 +23,7 @@ body{
     transition: 0.5s ease-in-out;
 }
 
-.card:hover .img{
+.img_hover:hover{
     transform: scale(1.1);
 }
 
@@ -70,3 +70,65 @@ body{
 }
   }
   
+.search_icon{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 24px;
+  top: 12px;
+}
+.input_long{
+  padding-left: 66px;
+  color: #212121;
+}
+.border_style{
+  border-top-right-radius: 65px;
+}
+
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #59d8b4;
+  --sb-size: 6px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+.font{
+  font-family: popins, sans-serif;
+}
+.lazy-load-image-loaded{
+  overflow: hidden;
+  transition: 0.5s ease-in;
+  border-radius: 1rem;
+}
+.title{
+  font-size: 14px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.svg_eye svg {
+  width: 100%;
+}

@@ -25,7 +25,7 @@ function Genre() {
     return (
         <>
         <Helmet>
-            <title>Hashira Movies | Genres</title>
+            <title>Movibess | Genres</title>
         </Helmet>
 
         <div className='flex flex-wrap justify-center px-2'>

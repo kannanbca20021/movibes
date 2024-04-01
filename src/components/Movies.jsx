@@ -36,8 +36,8 @@ function Movies() {
 
     return (
 
-        <div className='w-full bg-[#10141e] md:p-10 mb-20 md:mb-0'>
-            <Genre />
+        <div className='w-full bg-black md:px-8 md:py-5 mb-20 md:mb-0'>
+            {/* <Genre /> */}
             <Header />
             <motion.div
                 layout

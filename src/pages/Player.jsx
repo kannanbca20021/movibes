@@ -27,7 +27,7 @@ const Player = () => {
       }, []);
       
     
-    document.title = `Hashira Movies | ${moviedet.title}`
+    document.title = `Movibess | ${moviedet.title}`
 
     return (
       <>

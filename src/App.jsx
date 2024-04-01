@@ -35,8 +35,8 @@ function App() {
         theme="dark"
       />
 
-      <Navbar />
-      <div className="md:ml-[15rem]">
+      {/* <Navbar /> */}
+      <div className="w-full">
         <Routes>
           <Route path='/' element={<Container />} />
           <Route path='/login' element={<Login />} />

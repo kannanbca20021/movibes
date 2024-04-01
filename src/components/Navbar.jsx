@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import logo from "../assets/images/logo.png"
+import logo from "../assets/images/logo_new.png"
 import { Link } from "react-router-dom";
 import Contextpage from '../Contextpage';
 import { motion } from "framer-motion";
@@ -7,6 +7,7 @@ import { HiMenuAlt1, HiX } from "react-icons/hi";
 import User from '../assets/images/User.jpg';
 import { auth } from '../../firebase';
 import { toast } from "react-toastify";
+
 
 function Navbar() {
 
@@ -48,15 +49,14 @@ function Navbar() {
                 {activemobile ? <HiX /> : <HiMenuAlt1 />}
             </button>
 
-            <nav className={`${activemobile ? 'block' : 'hidden'} fixed bg-black/90 md:bg-black h-full w-full md:w-[15rem] z-30 md:block`}>
+            <nav className={`${activemobile ? 'block' : 'hidden'} fixed bg-[#212121] md:bg-[#212121] h-full w-full md:w-[15rem] z-30 md:block border_style`}>   
                 <motion.div
                     animate={{ scale: 1 }}
                     initial={{ scale: 0 }}
                     transition={{ duration: 0.4 }}
                 >
-                    <Link to="/" className="logo flex flex-col justify-center items-center m-7 gap-2" onClick={() => setActivemobile(!activemobile)}>
+                    <Link to="/" className="logo flex flex-col justify-center items-center m-8 gap-2 " onClick={() => setActivemobile(!activemobile)}>
                         <img src={logo} alt="logo" className="w-24" />
-                        <h1 className="text-gray-400/70 font-bold text-2xl text-center">Hashira Movies</h1>
                     </Link>
                 </motion.div>
 
