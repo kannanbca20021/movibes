@@ -1,10 +1,8 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-//=== google firebase import start ===
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useAuthState } from "react-firebase-hooks/auth"
-// ===================================
 import { toast } from 'react-toastify';
 
 const Contextpage = createContext();

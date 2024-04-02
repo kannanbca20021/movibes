@@ -82,45 +82,49 @@ const Navigation = () =>{
     <Helmet>
         <title>Movibes</title>
     </Helmet>
-     <div className='px-8 py-5 h-full min-h-1 w-full flex justify-between items-center '>
-        <div className="flex gap-3 justify-start items-center">
-          <div className="w-full">
-            <img src={logo} alt="logo" className="w-24" />
+     <div className="w-full flex items-center justify-center">
+       <div className='px-6 py-3 min-h-1 w-[80%] flex justify-between items-center fixed top-[20px] z-10 navbar_top'>
+          <div className="flex gap-5 justify-start items-center">
+            <div className="w-full">
+              <img src={logo} alt="logo" className="w-24" />
+            </div>
+            <ul className="text-white flex gap-5">
+            {Navdata.map((data) => (
+                // <Link key={data.id} to={data.link}><li className={`${header == data.headername ? 'text-white' : 'text-blsck'} p-2 my-2 `} onClick={() => setActivemobile(!activemobile)}>{data.Name}</li></Link>
+                <Link key={data.id} to={data.link}><li className={`${header == data.headername ? '  active_nav' : ''} relative text-white`} onClick={() => setActivemobile(!activemobile)}>{data.Name}</li></Link>
+
+              ))}
+              {/* <li className="text-base">Home</li>
+              <li className="text-base">Trending</li>
+              <li className="text-base">Upcoming</li>
+              <li className="text-base">Favorites</li> */}
+            </ul>
           </div>
-          <ul className="text-white flex gap-5">
-          {Navdata.map((data) => (
-                            <Link key={data.id} to={data.link}><li className={`${header == data.headername ? 'text-white' : ''} p-2 my-2  hover:bg-blue-500/20 rounded-[5px] border-2 hover:border-blue-600`} onClick={() => setActivemobile(!activemobile)}>{data.Name}</li></Link>
-            ))}
-            <li className="text-base">Home</li>
-            <li className="text-base">Trending</li>
-            <li className="text-base">Upcoming</li>
-            <li className="text-base">Favorites</li>
-          </ul>
+          <div className="flex justify-between items-center">
+            <div className="relative">
+                <img className="search_icon" src={search} alt="img_search"></img>
+                    <input
+                      type="search"
+                      name="searchpanel"
+                      id="searchpanel"
+                      placeholder='Search for movies, TV shows...'
+                      className='p-3 w-full m-1 md:w-[23rem] ld:w[18rem] rounded-3xl outline-none bg-stone-900 input_long border-none '
+                      onKeyUp={(e) => handleSearch()}
+                      value={value}
+                      onChange={(e) => setValue(e.target.value)}
+                    />
+            </div>
+            <div className="flex gap-3">
+                <div className="w-12 h-12">
+                    <img src={notifi} className="w-full" alt="notification"></img>
+                </div>
+                <div className="w-12 h-12">
+                <Avatar rounded />
+                </div>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-between items-center">
-          <div className="relative">
-              <img className="search_icon" src={search} alt="img_search"></img>
-                  <input
-                    type="search"
-                    name="searchpanel"
-                    id="searchpanel"
-                    placeholder='Search for movies, TV shows...'
-                    className='p-3 w-full m-1 md:w-[40rem] rounded-3xl outline-none bg-stone-900 input_long border-none '
-                    onKeyUp={(e) => handleSearch()}
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                  />
-          </div>
-          <div className="flex gap-3">
-              <div className="w-12 h-12">
-                  <img src={notifi} className="w-full" alt="notification"></img>
-              </div>
-              <div className="w-12 h-12">
-              <Avatar rounded />
-              </div>
-          </div>
-        </div>
-      </div>
+     </div>
       </>
   )
 

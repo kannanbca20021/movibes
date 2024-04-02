@@ -11,7 +11,7 @@ function Container() {
     const { setMovies } = useContext(Contextpage);
     const { query } = useParams()
     return (
-        <section>
+        <section className="relative">
         {/* <Searchbar /> */}
         <Navigation />
         {query ? <Search query={query} /> : <Movies />}

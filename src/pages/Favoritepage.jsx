@@ -4,6 +4,7 @@ import Contextpage from '../Contextpage';
 import Moviecard from '../components/Moviecard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import Navigation from '../components/Navigation';
 
 function Favoritepage() {
 
@@ -24,7 +25,7 @@ function Favoritepage() {
           </Helmet>
             
             <div className='w-full bg-black md:px-8 md:py-5 mb-20 md:mb-0'>
-                <Header />
+                <Navigation />
                 <motion.div
                     layout
                     className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around">

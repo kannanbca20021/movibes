@@ -6,6 +6,7 @@ import Header from '../components/Header';
 // import { Pagebtn } from '../components/Pagebtn';
 import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Navigation from '../components/Navigation';
 
 function Trending() {
 
@@ -29,6 +30,7 @@ function Trending() {
             </Helmet>
 
             <div className='w-full bg-black md:px-8 md:py-5 mb-20 md:mb-0'>
+                <Navigation />
                 <Header />
                 <motion.div
                     layout
@@ -37,21 +39,26 @@ function Trending() {
                         {
                             loader ? <span className="loader m-10"></span> :
                                 <>
-                                    <InfiniteScroll
-                                        className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around"
-                                        dataLength={trending.length} //This is important field to render the next data
-                                        next={() => setPage(page + 1)}
-                                        hasMore={page < totalPage}
-                                        loader={<span className="loader m-10"></span>}
-                                        scrollThreshol={0.9}
-                                        style={{ overflow: 'hidden' }}
-                                    >
-
-                                        {trending.map((tred) => (
-                                            <Moviecard key={tred.id} movie={tred} />
-                                        ))}
-
-                                    </InfiniteScroll>
+                                    <div className='w-full'>
+                                        <div className='w-full header flex justify-between items-center my-3 py-2 px-3'>
+                                            <p className='text-white text-[25px] font-semibold'>Trending</p>
+                                        </div>
+                                        <InfiniteScroll
+                                            className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around"
+                                            dataLength={trending.length} //This is important field to render the next data
+                                            next={() => setPage(page + 1)}
+                                            hasMore={page < totalPage}
+                                            loader={<span className="loader m-10"></span>}
+                                            scrollThreshol={0.9}
+                                            style={{ overflow: 'hidden' }}
+                                        >
+    
+                                            {trending.map((tred) => (
+                                                <Moviecard key={tred.id} movie={tred} />
+                                            ))}
+    
+                                        </InfiniteScroll>
+                                    </div>
 
                                 </>
                         }

@@ -46,23 +46,28 @@ function Movies() {
                     {
                         loader ? <span className="loader m-10"></span> :
                             <>
-                                {/* {console.log(movies.length)} */}
-                                <InfiniteScroll
-                                    className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around"
-                                    dataLength={movies.length} //This is important field to render the next data
-                                    next={() => setPage(page + 1)}
-                                    hasMore={page < totalPage}
-                                    loader={<span className="loader m-10"></span>}
-                                    scrollThreshol={0.9}
-                                    style={{ overflow: 'hidden' }}
-                                >
-
-                                    {movies.map((movie) => (
-                                        <Moviecard key={movie.id} movie={movie} />
-                                    ))}
-
-                                </InfiniteScroll>
-
+                            
+                                <div className='w-full'>
+                                    <div className='w-full header flex justify-between items-center my-3 py-2 px-3'>
+                                        <p className='text-white text-[25px] font-semibold'>Recommended</p>
+                                       <Genre />
+                                    </div>
+                                    <InfiniteScroll
+                                        className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around"
+                                        dataLength={movies.length} //This is important field to render the next data
+                                        next={() => setPage(page + 1)}
+                                        hasMore={page < totalPage}
+                                        loader={<span className="loader m-10"></span>}
+                                        scrollThreshol={0.9}
+                                        style={{ overflow: 'hidden' }}
+                                    >
+    
+                                        {movies.map((movie) => (
+                                            <Moviecard key={movie.id} movie={movie} />
+                                        ))}
+    
+                                    </InfiniteScroll>
+                                </div>
                             </>
                     }
                 </AnimatePresence>
