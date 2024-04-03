@@ -2,7 +2,6 @@ import React,{useContext,useState} from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Contextpage from '../Contextpage';
-import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom';
 import slugify from 'react-slugify';
 import search from "../assets/images/search_icon.png"
@@ -11,6 +10,7 @@ import { Avatar } from "flowbite-react";
 import logo from "../assets/images/logo_new.png"
 import { auth } from '../../firebase';
 import { toast } from "react-toastify";
+
 
 const Navigation = () =>{
 
@@ -83,24 +83,20 @@ const Navigation = () =>{
         <title>Movibes</title>
     </Helmet>
      <div className="w-full flex items-center justify-center">
-       <div className='px-6 py-3 min-h-1 w-[80%] flex justify-between items-center fixed top-[20px] z-10 navbar_top'>
+       <div className='px-6 py-3 min-h-1 w-[75%] md:w-[97%] flex justify-between items-center fixed top-[20px] z-10 navbar_top'>
           <div className="flex gap-5 justify-start items-center">
             <div className="w-full">
               <img src={logo} alt="logo" className="w-24" />
             </div>
-            <ul className="text-white flex gap-5">
+            <ul className="max-[950px]:hidden text-white flex gap-5">
             {Navdata.map((data) => (
                 // <Link key={data.id} to={data.link}><li className={`${header == data.headername ? 'text-white' : 'text-blsck'} p-2 my-2 `} onClick={() => setActivemobile(!activemobile)}>{data.Name}</li></Link>
                 <Link key={data.id} to={data.link}><li className={`${header == data.headername ? '  active_nav' : ''} relative text-white`} onClick={() => setActivemobile(!activemobile)}>{data.Name}</li></Link>
 
               ))}
-              {/* <li className="text-base">Home</li>
-              <li className="text-base">Trending</li>
-              <li className="text-base">Upcoming</li>
-              <li className="text-base">Favorites</li> */}
             </ul>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="max-[950px]:hidden flex justify-between items-center">
             <div className="relative">
                 <img className="search_icon" src={search} alt="img_search"></img>
                     <input
@@ -108,7 +104,7 @@ const Navigation = () =>{
                       name="searchpanel"
                       id="searchpanel"
                       placeholder='Search for movies, TV shows...'
-                      className='p-3 w-full m-1 md:w-[23rem] ld:w[18rem] rounded-3xl outline-none bg-stone-900 input_long border-none '
+                      className='p-3 w-full m-1 md:w-[15rem]  lg:w-[23rem] rounded-3xl outline-none bg-stone-900 input_long border-none '
                       onKeyUp={(e) => handleSearch()}
                       value={value}
                       onChange={(e) => setValue(e.target.value)}

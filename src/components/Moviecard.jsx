@@ -66,12 +66,12 @@ function Moviecard({ movie }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
             layout
-            className="card relative w-full md:w-60 my-3 mx-4 md:my-5 md:mx-0 cursor-pointer">
+            className="card relative max-[500px]:w-[40%] w-full md:w-60 my-3 mx-4 md:my-5 md:mx-0 cursor-pointer">
             
-            <div className='h-[360px]'>    
+            <div className='md:h-[360px]'>    
                 <div>
                     {movie.poster_path === null ? <img className='img object-cover' src={noimage} /> :
-                        <LazyLoadImage effect='blur' className='img object-cover  rounded-2xl hover:rounded-2xl overflow-hidden'  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />}
+                        <LazyLoadImage effect='blur' className='img object-cover rounded-2xl hover:rounded-2xl overflow-hidden'  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />}
                 </div>
             </div>
 

@@ -37,16 +37,10 @@ function Header() {
   return (
     <>
       <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 relative">
-        <Carousel>
+        <Carousel slideInterval={50000}>
           {movieImages.map((movie, index) => (
             <div key={index} className="relative">
               <img src={movie.image} alt={`Movie ${index}`} className="w-full h-full object-cover rounded-2xl" />
-              <div className="absolute top-0 right-0 mt-2 mr-2">
-                <button className="bg-blue-500 text-white rounded-full p-2">Play</button>
-              </div>
-              <div className="absolute bottom-0 left-0 mb-2 ml-2 text-white">
-                <p>{movie.title}</p>
-              </div>
             </div>
           ))}
         </Carousel>

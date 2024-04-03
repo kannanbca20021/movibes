@@ -49,7 +49,7 @@ function Movies() {
                             
                                 <div className='w-full'>
                                     <div className='w-full header flex justify-between items-center my-3 py-2 px-3'>
-                                        <p className='text-white text-[25px] font-semibold'>Recommended</p>
+                                        <p className='text-white sm:text-[18px] md:text-[25px] font-semibold'>Our Genres</p>
                                        <Genre />
                                     </div>
                                     <InfiniteScroll
