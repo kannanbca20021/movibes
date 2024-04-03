@@ -76,17 +76,18 @@ export const Detail = () => {
       ) : (
         <>
         <Navigation />
-          <Link
+         
+
+          <div className="w-full h-full py-[150px]">
+          {/* <Link
             to="/"
             className="fixed z-10 text-4xl text-black bg-white m-3 md:m-5 rounded-full"
           >
             <HiChevronLeft />
-          </Link>
-
-          <div className="w-full h-full py-[150px]">
+          </Link> */}
             <div className="movie-card">
               <div className="poster-wrapper">
-                <div className="poster h-[600px]">
+                <div className="poster sm:h-[600px] h-[200px]">
                   {moviedet && moviedet?.backdrop_path === null ? (
                     <img src={noimage} className="w-full object-contain" alt="Movie Poster" />
                   ) : (

@@ -68,12 +68,14 @@ function Moviecard({ movie }) {
             layout
             className="card relative max-[500px]:w-[40%] w-full md:w-60 my-3 mx-4 md:my-5 md:mx-0 cursor-pointer">
             
-            <div className='md:h-[360px]'>    
-                <div>
-                    {movie.poster_path === null ? <img className='img object-cover' src={noimage} /> :
-                        <LazyLoadImage effect='blur' className='img object-cover rounded-2xl hover:rounded-2xl overflow-hidden'  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />}
+            <Link to={`/moviedetail/${movie.id}`}>
+                <div className='md:h-[360px]'>    
+                    <div>
+                        {movie.poster_path === null ? <img className='img object-cover' src={noimage} /> :
+                            <LazyLoadImage effect='blur' className='img object-cover rounded-2xl hover:rounded-2xl overflow-hidden'  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />}
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             <div className=''>
                 <div className='bottom-0 w-full flex justify-start items-start py-3 z-20 font flex-col'>
@@ -82,7 +84,10 @@ function Moviecard({ movie }) {
                 </div>
                 <div className='flex justify-between items-start'>
                     <div className='flex gap-3 items-center justify-start'>
-                       <div className='w-10'><img src={imdb} className="w-full" alt="imdb"></img></div>
+                        
+                       <div className='w-10'>
+                        <img src={imdb} className="w-full" alt="imdb"></img>
+                       </div>
                        <h1 className="font-bold from-stone-50 text-base text-[#FFC907]">
                          {(movie.vote_average || 0).toFixed(1)}
                         </h1>
